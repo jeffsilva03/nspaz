@@ -1,0 +1,1115 @@
+/* ============================================
+   Liturgia Diária - Premium Styles
+   Igreja Matriz Nossa Senhora da Paz
+   ============================================ */
+
+/* ============================================
+   HERO SECTION - LITURGIA
+   ============================================ */
+.liturgia-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.liturgia-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(135deg, var(--primary-dark) 0%, var(--dark) 100%);
+    z-index: 0;
+}
+
+.liturgia-hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23C9A860' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.liturgia-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201, 168, 96, 0.15) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.liturgia-hero-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatParticle 8s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(100px) scale(0);
+    }
+    10% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1);
+    }
+}
+
+.liturgia-hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 800px;
+}
+
+.hero-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+.hero-breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-breadcrumb a:hover {
+    color: var(--gold);
+}
+
+.breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 10px;
+}
+
+.hero-breadcrumb > span:last-child {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.hero-icon-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 32px;
+}
+
+.hero-icon-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, rgba(201, 168, 96, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.hero-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--dark);
+    box-shadow: 
+        0 8px 32px rgba(201, 168, 96, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.liturgia-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 8vw, 72px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.liturgia-hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: clamp(18px, 3vw, 24px);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 32px;
+}
+
+.liturgia-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.liturgia-date-badge i {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.scroll-arrow {
+    margin-top: 12px;
+    animation: bounceDown 2s ease-in-out infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+.liturgia-hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+}
+
+.liturgia-hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+.liturgia-hero-wave path {
+    fill: var(--cream);
+}
+
+/* ============================================
+   INFO BAR
+   ============================================ */
+.liturgia-info-bar {
+    background: var(--white);
+    padding: 24px 0;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 10;
+}
+
+.info-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(121, 73, 61, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.info-icon.cor-indicator {
+    font-size: 16px;
+}
+
+.info-icon.cor-indicator.verde { color: #2E7D32; }
+.info-icon.cor-indicator.roxo { color: #6A1B9A; }
+.info-icon.cor-indicator.branco { color: #9E9E9E; }
+.info-icon.cor-indicator.vermelho { color: #C62828; }
+.info-icon.cor-indicator.rosa { color: #E91E63; }
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.info-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--cream-dark);
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+.liturgia-main {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.liturgia-main .container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.liturgia-sidebar {
+    position: sticky;
+    top: 120px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+}
+
+.sidebar-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cream-dark);
+}
+
+.sidebar-header h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-header h3 i {
+    color: var(--primary);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    background: var(--cream);
+    color: var(--dark-soft);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gradient-gold);
+    transform: scaleY(0);
+    transition: var(--transition-base);
+}
+
+.sidebar-link:hover {
+    background: var(--cream-dark);
+}
+
+.sidebar-link.active {
+    background: rgba(121, 73, 61, 0.1);
+    color: var(--primary);
+}
+
+.sidebar-link.active::before {
+    transform: scaleY(1);
+}
+
+.link-number {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    opacity: 0.6;
+}
+
+.link-text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-progress {
+    margin-top: 24px;
+    height: 4px;
+    background: var(--cream-dark);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-gold);
+    transition: width 0.3s ease;
+}
+
+/* ============================================
+   LEITURA CARDS
+   ============================================ */
+.liturgia-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.leitura-section {
+    scroll-margin-top: 120px;
+}
+
+.leitura-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.leitura-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.leitura-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 32px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-dark);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.leitura-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.leitura-badge .badge-number {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+.leitura-badge.primeira {
+    background: linear-gradient(135deg, rgba(121, 73, 61, 0.15) 0%, rgba(121, 73, 61, 0.05) 100%);
+    color: var(--primary);
+}
+
+.leitura-badge.salmo {
+    background: linear-gradient(135deg, rgba(201, 168, 96, 0.2) 0%, rgba(201, 168, 96, 0.05) 100%);
+    color: var(--gold-dark);
+}
+
+.leitura-badge.segunda {
+    background: linear-gradient(135deg, rgba(106, 27, 154, 0.15) 0%, rgba(106, 27, 154, 0.05) 100%);
+    color: #6A1B9A;
+}
+
+.leitura-badge.evangelho {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 12px 24px;
+}
+
+.leitura-badge.evangelho .badge-icon {
+    font-size: 16px;
+    color: var(--gold);
+}
+
+.leitura-referencia {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.leitura-referencia i {
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.leitura-body {
+    padding: 40px;
+}
+
+.leitura-texto {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    line-height: 2;
+    color: var(--dark-soft);
+}
+
+.leitura-texto p {
+    margin-bottom: 24px;
+    text-indent: 2em;
+}
+
+.leitura-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.leitura-footer {
+    padding: 24px 40px;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.palavra-senhor {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    font-style: italic;
+}
+
+.resposta {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold-dark);
+}
+
+/* ============================================
+   SALMO CARD
+   ============================================ */
+.salmo-card {
+    background: linear-gradient(135deg, #FFF8E7 0%, var(--white) 100%);
+    position: relative;
+    overflow: visible;
+}
+
+.salmo-decoration {
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--dark);
+    box-shadow: 0 8px 24px rgba(201, 168, 96, 0.4);
+}
+
+.salmo-refrao {
+    margin: 0 40px;
+    padding: 28px 32px;
+    background: linear-gradient(135deg, rgba(201, 168, 96, 0.15) 0%, rgba(201, 168, 96, 0.05) 100%);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.refrao-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.refrao-texto {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--primary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.salmo-texto {
+    font-size: 18px;
+}
+
+.salmo-texto p {
+    text-indent: 0;
+    padding-left: 24px;
+    border-left: 2px solid var(--cream-dark);
+    margin-bottom: 20px;
+}
+
+/* ============================================
+   EVANGELHO CARD
+   ============================================ */
+.evangelho-card {
+    background: var(--white);
+    border: 2px solid var(--primary);
+    position: relative;
+}
+
+.evangelho-glow {
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    z-index: 0;
+    filter: blur(20px);
+}
+
+.evangelho-card .leitura-header {
+    background: var(--gradient-primary);
+    border-bottom: none;
+}
+
+.evangelho-card .leitura-referencia {
+    color: var(--white);
+}
+
+.evangelho-card .leitura-referencia i {
+    color: var(--gold);
+}
+
+.evangelho-aclamacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(201, 168, 96, 0.15) 0%, transparent 100%);
+}
+
+.aclamacao-icon {
+    color: var(--gold);
+    font-size: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+.evangelho-aclamacao p {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.evangelho-intro {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--cream-dark);
+}
+
+.intro-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--gray);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.intro-autor {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.evangelho-texto {
+    font-size: 20px;
+    position: relative;
+}
+
+.evangelho-texto::first-letter {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 700;
+    float: left;
+    line-height: 1;
+    margin-right: 12px;
+    margin-top: 8px;
+    color: var(--primary);
+}
+
+.evangelho-footer {
+    background: var(--gradient-primary);
+}
+
+.evangelho-footer .palavra-senhor,
+.evangelho-footer .resposta {
+    color: var(--white);
+}
+
+.evangelho-footer .resposta {
+    color: var(--gold);
+}
+
+/* ============================================
+   LOADING SKELETON
+   ============================================ */
+.loading-skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skeleton-line {
+    height: 20px;
+    background: linear-gradient(90deg, var(--cream) 25%, var(--cream-dark) 50%, var(--cream) 75%);
+    background-size: 200% 100%;
+    border-radius: 4px;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-line.short {
+    width: 60%;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ============================================
+   LITURGIA ACTIONS
+   ============================================ */
+.liturgia-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid var(--cream-dark);
+}
+
+/* ============================================
+   SANTO DO DIA SECTION
+   ============================================ */
+.santo-dia-section {
+    padding: 100px 0;
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.santo-dia-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.santo-dia-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-xl);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+.santo-dia-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(201, 168, 96, 0.2) 0%, transparent 70%);
+}
+
+.decoration-cross {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--gold);
+}
+
+.santo-dia-content {
+    position: relative;
+    z-index: 1;
+}
+
+.santo-dia-header {
+    margin-bottom: 32px;
+}
+
+.santo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.santo-dia-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+}
+
+.santo-dia-body {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.santo-imagem-wrapper {
+    flex-shrink: 0;
+}
+
+.santo-imagem-wrapper img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--gold);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.santo-imagem-placeholder {
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: 4px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.santo-info-content {
+    flex: 1;
+}
+
+.santo-frase {
+    position: relative;
+    padding: 0;
+    margin: 0 0 32px 0;
+    border: none;
+}
+
+.santo-frase i {
+    color: var(--gold);
+    font-size: 32px;
+    opacity: 0.5;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.santo-frase p {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.santo-frase p:empty {
+    display: none;
+}
+
+/* ============================================
+   RESPONSIVE - LITURGIA
+   ============================================ */
+@media (max-width: 1200px) {
+    .liturgia-main .container {
+        grid-template-columns: 220px 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 992px) {
+    .liturgia-main .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .liturgia-sidebar {
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sidebar-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        gap: 12px;
+    }
+    
+    .sidebar-link {
+        white-space: nowrap;
+        padding: 10px 16px;
+    }
+    
+    .sidebar-link::before {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        height: 3px;
+        transform: scaleX(0);
+    }
+    
+    .sidebar-link.active::before {
+        transform: scaleX(1);
+    }
+    
+    .sidebar-progress {
+        display: none;
+    }
+    
+    .info-bar-content {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .info-divider {
+        width: 100px;
+        height: 1px;
+    }
+    
+    .santo-dia-body {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .santo-frase i {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .liturgia-hero {
+        min-height: 60vh;
+        padding-top: 80px;
+    }
+    
+    .hero-icon-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .hero-icon {
+        font-size: 40px;
+    }
+    
+    .leitura-header {
+        padding: 20px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .leitura-body {
+        padding: 24px;
+    }
+    
+    .leitura-texto {
+        font-size: 17px;
+        line-height: 1.9;
+    }
+    
+    .leitura-footer {
+        padding: 20px 24px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .salmo-refrao {
+        margin: 0 24px;
+        padding: 20px 24px;
+    }
+    
+    .refrao-texto {
+        font-size: 18px;
+    }
+    
+    .evangelho-texto::first-letter {
+        font-size: 48px;
+    }
+    
+    .santo-dia-card {
+        padding: 32px 24px;
+    }
+    
+    .santo-imagem-wrapper img,
+    .santo-imagem-placeholder {
+        width: 140px;
+        height: 140px;
+        font-size: 60px;
+    }
+    
+    .santo-frase p {
+        font-size: 18px;
+    }
+    
+    .liturgia-actions {
+        flex-direction: column;
+    }
+    
+    .liturgia-actions .btn {
+        width: 100%;
+    }
+    
+    .hero-scroll-indicator {
+        display: none;
+    }
+}
+
+/* ============================================
+   NAVBAR SCROLLED STATE FOR LITURGIA PAGE
+   ============================================ */
+.navbar-liturgia.scrolled {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .navbar,
+    .liturgia-hero,
+    .liturgia-info-bar,
+    .liturgia-sidebar,
+    .liturgia-actions,
+    .santo-dia-section,
+    .footer,
+    .back-to-top {
+        display: none !important;
+    }
+    
+    .liturgia-main {
+        padding: 0;
+    }
+    
+    .liturgia-main .container {
+        display: block;
+    }
+    
+    .leitura-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+    }
+    
+    .leitura-texto {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+
+.liturgia-hero-subtitle{
+    margin-bottom:100px;
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liturgia Diária - Igreja Matriz Nossa Senhora da Paz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="liturgia.css">
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#inicio" class="logo-section">
+                <img src="../assets/images/logoBranca.png" alt="Igreja Matriz Nossa Senhora da Paz" class="logo-image logo-white">
+                <img src="../assets/images/logoMarrom.png" alt="Igreja Matriz Nossa Senhora da Paz" class="logo-image logo-dark">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#inicio" class="nav-link">Início</a></li>
+                <li><a href="../index.html#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="../index.html#missas" class="nav-link">Missas</a></li>
+                <li><a href="../index.html#eventos" class="nav-link">Eventos</a></li>
+                <li><a href="../index.html#pastorais" class="nav-link">Pastorais</a></li>
+                <li><a href="../index.html#galeria" class="nav-link">Galeria</a></li>
+                <li><a href="../index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://wa.me/5500000000000" target="_blank" class="btn-nav-cta">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Fale Conosco</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html#inicio" class="mobile-nav-link">Início</a></li>
+            <li><a href="index.html#sobre" class="mobile-nav-link">Sobre</a></li>
+            <li><a href="index.html#missas" class="mobile-nav-link">Missas</a></li>
+            <li><a href="index.html#eventos" class="mobile-nav-link">Eventos</a></li>
+            <li><a href="index.html#pastorais" class="mobile-nav-link">Pastorais</a></li>
+            <li><a href="index.html#galeria" class="mobile-nav-link">Galeria</a></li>
+            <li><a href="index.html#contato" class="mobile-nav-link">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Liturgia -->
+    <section class="liturgia-hero">
+        <div class="liturgia-hero-bg"></div>
+        <div class="liturgia-hero-overlay"></div>
+        <div class="liturgia-hero-particles" id="heroParticles"></div>
+        <div class="liturgia-hero-content">
+            <div class="hero-icon-container">
+                <div class="hero-icon-glow"></div>
+                <div class="hero-icon">
+                    <i class="fas fa-book-bible"></i>
+                </div>
+            </div>
+            <h1 class="liturgia-hero-title">Liturgia Diária</h1>
+            <p class="liturgia-hero-subtitle">A Palavra de Deus para iluminar o seu dia</p>
+        </div>
+        <div class="liturgia-hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64 C288,120 576,0 864,64 C1152,128 1296,32 1440,64 L1440,120 L0,120 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Info Bar -->
+    <section class="liturgia-info-bar">
+        <div class="container">
+            <div class="info-bar-content">
+                <div class="info-item liturgia-nome-item">
+                    <div class="info-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <div class="info-text">
+                        <span class="info-label">Celebração</span>
+                        <span class="info-value" id="infoLiturgiaNome">Carregando...</span>
+                    </div>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-item liturgia-cor-item">
+                    <div class="info-icon cor-indicator" id="corIndicator">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="info-text">
+                        <span class="info-label">Cor Litúrgica</span>
+                        <span class="info-value" id="infoLiturgiaCor">Carregando...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="liturgia-main">
+        <div class="container">
+            <!-- Sidebar de Navegação -->
+            <aside class="liturgia-sidebar" id="liturgiaSidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-list"></i> Navegação</h3>
+                </div>
+                <nav class="sidebar-nav" id="sidebarNav">
+                    <a href="#primeira-leitura" class="sidebar-link active" data-section="primeira-leitura">
+                        <span class="link-number">01</span>
+                        <span class="link-text">1ª Leitura</span>
+                    </a>
+                    <a href="#salmo" class="sidebar-link" data-section="salmo">
+                        <span class="link-number">02</span>
+                        <span class="link-text">Salmo</span>
+                    </a>
+                    <a href="#segunda-leitura" class="sidebar-link" data-section="segunda-leitura" id="sidebarSegundaLeitura" style="display: none;">
+                        <span class="link-number">03</span>
+                        <span class="link-text">2ª Leitura</span>
+                    </a>
+                    <a href="#evangelho" class="sidebar-link" data-section="evangelho">
+                        <span class="link-number" id="evangelhoNumber">03</span>
+                        <span class="link-text">Evangelho</span>
+                    </a>
+                </nav>
+                <div class="sidebar-progress">
+                    <div class="progress-bar" id="readingProgress"></div>
+                </div>
+            </aside>
+
+            <!-- Conteúdo das Leituras -->
+            <div class="liturgia-content">
+                <!-- Primeira Leitura -->
+                <article class="leitura-section" id="primeira-leitura">
+                    <div class="leitura-card">
+                        <div class="leitura-header">
+                            <div class="leitura-badge primeira">
+                                <span class="badge-number">01</span>
+                                <span class="badge-text">Primeira Leitura</span>
+                            </div>
+                            <div class="leitura-referencia" id="primeiraLeituraRef">
+                                <i class="fas fa-book"></i>
+                                <span>Carregando...</span>
+                            </div>
+                        </div>
+                        <div class="leitura-body">
+                            <div class="leitura-texto" id="primeiraLeituraTexto">
+                                <div class="loading-skeleton">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leitura-footer">
+                            <span class="palavra-senhor">Palavra do Senhor.</span>
+                            <span class="resposta">Graças a Deus!</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Salmo -->
+                <article class="leitura-section salmo-section" id="salmo">
+                    <div class="leitura-card salmo-card">
+                        
+                        <div class="leitura-header">
+                            <div class="leitura-badge salmo">
+                                <span class="badge-number">02</span>
+                                <span class="badge-text">Salmo Responsorial</span>
+                            </div>
+                            <div class="leitura-referencia" id="salmoRef">
+                                <i class="fas fa-music"></i>
+                                <span>Carregando...</span>
+                            </div>
+                        </div>
+                        <div class="salmo-refrao" id="salmoRefrao">
+                            <div class="refrao-label"><i class="fas fa-redo-alt"></i> Refrão</div>
+                            <p class="refrao-texto">Carregando...</p>
+                        </div>
+                        <div class="leitura-body">
+                            <div class="leitura-texto salmo-texto" id="salmoTexto">
+                                <div class="loading-skeleton">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                    <div class="skeleton-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Segunda Leitura (condicional) -->
+                <article class="leitura-section" id="segunda-leitura" style="display: none;">
+                    <div class="leitura-card">
+                        <div class="leitura-header">
+                            <div class="leitura-badge segunda">
+                                <span class="badge-number">03</span>
+                                <span class="badge-text">Segunda Leitura</span>
+                            </div>
+                            <div class="leitura-referencia" id="segundaLeituraRef">
+                                <i class="fas fa-book"></i>
+                                <span>Carregando...</span>
+                            </div>
+                        </div>
+                        <div class="leitura-body">
+                            <div class="leitura-texto" id="segundaLeituraTexto">
+                                <div class="loading-skeleton">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leitura-footer">
+                            <span class="palavra-senhor">Palavra do Senhor.</span>
+                            <span class="resposta">Graças a Deus!</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Evangelho -->
+                <article class="leitura-section evangelho-section" id="evangelho">
+                    <div class="leitura-card evangelho-card">
+                        <div class="evangelho-glow"></div>
+                        <div class="leitura-header">
+                            <div class="leitura-badge evangelho">
+                                <span class="badge-icon"><i class="fas fa-cross"></i></span>
+                                <span class="badge-number" id="evangelhoBadgeNumber">03</span>
+                                <span class="badge-text">Evangelho</span>
+                            </div>
+                            <div class="leitura-referencia" id="evangelhoRef">
+                                <i class="fas fa-cross"></i>
+                                <span>Carregando...</span>
+                            </div>
+                        </div>
+                        <div class="evangelho-aclamacao">
+                            <div class="aclamacao-icon"><i class="fas fa-star"></i></div>
+                            <p>Aleluia, Aleluia, Aleluia!</p>
+                        </div>
+                        <div class="leitura-body">
+                            <div class="evangelho-intro">
+                                <span class="intro-text">Proclamação do Evangelho de Jesus Cristo segundo</span>
+                                <span class="intro-autor" id="evangelhoAutor">...</span>
+                            </div>
+                            <div class="leitura-texto evangelho-texto" id="evangelhoTexto">
+                                <div class="loading-skeleton">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leitura-footer evangelho-footer">
+                            <span class="palavra-senhor">Palavra da Salvação.</span>
+                            <span class="resposta">Glória a vós, Senhor!</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Ações finais -->
+                <div class="liturgia-actions">
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Voltar ao Início</span>
+                    </a>
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <i class="fas fa-print"></i>
+                        <span>Imprimir Liturgia</span>
+                    </button>
+                    <button class="btn btn-gold" id="btnCompartilhar">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Compartilhar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="../assets/images/logoBranca.png" alt="Igreja Matriz" class="footer-logo-img">
+                            <img src="../assets/images/PaZcom.png" alt="Pazcom" class="footer-logo-img2">
+                        </div>
+                        <p class="footer-description">Uma comunidade de fé, esperança e amor, dedicada a servir a Deus e ao próximo.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Links Rápidos</h4>
+                        <ul>
+                            <li><a href="index.html#inicio">Início</a></li>
+                            <li><a href="index.html#sobre">Sobre Nós</a></li>
+                            <li><a href="index.html#missas">Horários das Missas</a></li>
+                            <li><a href="index.html#eventos">Eventos</a></li>
+                            <li><a href="index.html#pastorais">Pastorais</a></li>
+                            <li><a href="index.html#galeria">Galeria</a></li>
+                            <li><a href="index.html#contato">Contato</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Sacramentos</h4>
+                        <ul>
+                            <li><a href="#">Batismo</a></li>
+                            <li><a href="#">Primeira Eucaristia</a></li>
+                            <li><a href="#">Crisma</a></li>
+                            <li><a href="#">Matrimônio</a></li>
+                            <li><a href="#">Confissão</a></li>
+                            <li><a href="#">Unção dos Enfermos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4>Contato</h4>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Praça da Matriz, 100<br>Centro - CEP 00000-000</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(00) 0000-0000</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@nossasenhoradapaz.com.br</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="far fa-clock"></i>
+                            <span>Secretaria: Seg-Sex 8h-17h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">© 2026 Igreja Matriz Nossa Senhora da Paz. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="liturgia.js"></script>
+</body>
+</html>
