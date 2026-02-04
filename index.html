@@ -14,8 +14,79 @@
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-content">
-            <div class="preloader-cross"></div>
-            <span class="preloader-text">Igreja Matriz</span>
+            <!-- Logo com animação de formação -->
+            <div class="preloader-logo-container">
+                <div class="preloader-particles"></div>
+                <img src="assets/images/logoBranca.png" alt="Igreja Matriz" class="preloader-logo" id="preloaderLogo">
+                <div class="preloader-glow"></div>
+            </div>
+            <div class="preloader-text-container">
+                <span class="preloader-text preloader-text-main">
+                    <span class="preloader-letter">P</span>
+                    <span class="preloader-letter">a</span>
+                    <span class="preloader-letter">r</span>
+                    <span class="preloader-letter">ó</span>
+                    <span class="preloader-letter">q</span>
+                    <span class="preloader-letter">u</span>
+                    <span class="preloader-letter">i</span>
+                    <span class="preloader-letter">a</span>
+                    <span class="preloader-space"></span>
+                    <span class="preloader-letter">N</span>
+                    <span class="preloader-letter">o</span>
+                    <span class="preloader-letter">s</span>
+                    <span class="preloader-letter">s</span>
+                    <span class="preloader-letter">a</span>
+                    <span class="preloader-space"></span>
+                    <span class="preloader-letter">S</span>
+                    <span class="preloader-letter">e</span>
+                    <span class="preloader-letter">n</span>
+                    <span class="preloader-letter">h</span>
+                    <span class="preloader-letter">o</span>
+                    <span class="preloader-letter">r</span>
+                    <span class="preloader-letter">a</span>
+                    <span class="preloader-space"></span>
+                    <span class="preloader-letter">d</span>
+                    <span class="preloader-letter">a</span>
+                    <span class="preloader-space"></span>
+                    <span class="preloader-letter">P</span>
+                    <span class="preloader-letter">a</span>
+                    <span class="preloader-letter">z</span>
+                </span>
+                <span class="preloader-text preloader-text-subtitle">
+                    <span class="preloader-letter-sub">D</span>
+                    <span class="preloader-letter-sub">i</span>
+                    <span class="preloader-letter-sub">o</span>
+                    <span class="preloader-letter-sub">c</span>
+                    <span class="preloader-letter-sub">e</span>
+                    <span class="preloader-letter-sub">s</span>
+                    <span class="preloader-letter-sub">e</span>
+                    <span class="preloader-space-sub"></span>
+                    <span class="preloader-letter-sub">d</span>
+                    <span class="preloader-letter-sub">e</span>
+                    <span class="preloader-space-sub"></span>
+                    <span class="preloader-letter-sub">M</span>
+                    <span class="preloader-letter-sub">o</span>
+                    <span class="preloader-letter-sub">g</span>
+                    <span class="preloader-letter-sub">i</span>
+                    <span class="preloader-space-sub"></span>
+                    <span class="preloader-letter-sub">d</span>
+                    <span class="preloader-letter-sub">a</span>
+                    <span class="preloader-letter-sub">s</span>
+                    <span class="preloader-space-sub"></span>
+                    <span class="preloader-letter-sub">C</span>
+                    <span class="preloader-letter-sub">r</span>
+                    <span class="preloader-letter-sub">u</span>
+                    <span class="preloader-letter-sub">z</span>
+                    <span class="preloader-letter-sub">e</span>
+                    <span class="preloader-letter-sub">s</span>
+                    <span class="preloader-letter-sub">-</span>
+                    <span class="preloader-letter-sub">S</span>
+                    <span class="preloader-letter-sub">P</span>
+                </span>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
         </div>
     </div>
 
@@ -120,6 +191,82 @@
         </div>
     </section>
 
+
+    <!-- Liturgia do Dia Section -->
+    <section class="liturgia-dia-section" id="liturgia-dia">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Palavra de Deus</div>
+                <h2 class="section-title">Liturgia do Dia</h2>
+                <p class="section-subtitle">Acompanhe as leituras e o santo do dia de hoje.</p>
+            </div>
+
+            <div class="liturgia-grid">
+                <!-- Leituras do Dia -->
+                <div class="liturgia-card leituras-card">
+                    <div class="liturgia-card-header">
+                        <div class="liturgia-icon">
+                            <i class="fas fa-book-bible"></i>
+                        </div>
+                        <div class="liturgia-header-info">
+                            <h3>Leituras do Dia</h3>
+                            <span class="liturgia-data" id="liturgiaData">Carregando...</span>
+                        </div>
+                    </div>
+                    <div class="liturgia-info-badge" id="liturgiaInfo">
+                        <span class="liturgia-nome" id="liturgiaNome">Carregando...</span>
+                        <span class="liturgia-cor" id="liturgiaCor"></span>
+                    </div>
+                    <div class="leituras-lista" id="leiturasLista">
+                        <div class="leitura-item loading">
+                            <div class="leitura-skeleton"></div>
+                        </div>
+                        <div class="leitura-item loading">
+                            <div class="leitura-skeleton"></div>
+                        </div>
+                        <div class="leitura-item loading">
+                            <div class="leitura-skeleton"></div>
+                        </div>
+                    </div>
+                    <a href="https://liturgia.cancaonova.com/pb/" target="_blank" class="btn btn-outline-primary btn-sm liturgia-link">
+                        <span>Ver leituras completas</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Santo do Dia -->
+                <div class="liturgia-card santo-card">
+                    <div class="liturgia-card-header">
+                        <div class="liturgia-icon santo-icon">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <div class="liturgia-header-info">
+                            <h3>Santo do Dia</h3>
+                            <span class="santo-data" id="santoData">Carregando...</span>
+                        </div>
+                    </div>
+                    <div class="santo-content">
+                        <div class="santo-imagem" id="santoImagem">
+                            <div class="santo-img-placeholder">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                        </div>
+                        <div class="santo-info">
+                            <h4 class="santo-nome" id="santoNome">Carregando...</h4>
+                            <p class="santo-frase" id="santoFrase"></p>
+                        </div>
+                    </div>
+                    <a href="https://santo.cancaonova.com/" target="_blank" class="btn btn-outline-primary btn-sm liturgia-link">
+                        <span>Conhecer a história</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Sobre Section -->
     <section class="sobre-section" id="sobre">
         <div class="container">
@@ -175,9 +322,147 @@
         </div>
     </section>
 
+    
+
+    <!-- Padroeira Section -->
+    <section class="padroeira-section" id="padroeira">
+        <div class="container">
+            <div class="padroeira-grid">
+                <div class="padroeira-image">
+                    <div class="padroeira-img-wrapper">
+                        <img src="assets/images/NossaSraPaz.jpg" alt="Nossa Senhora da Paz" class="padroeira-img">
+                        <div class="padroeira-glow"></div>
+                    </div>
+                </div>
+                <div class="padroeira-content">
+                    <div class="section-tag">Nossa Padroeira</div>
+                    <h2 class="section-title">Nossa Senhora da Paz</h2>
+                    <div class="padroeira-text">
+                        <p>Nossa Senhora da Paz é uma das mais belas invocações marianas, representando o desejo universal de harmonia e reconciliação entre os povos. Sua devoção remonta aos tempos de conflito, quando os fiéis buscavam na Mãe de Deus a intercessão pela paz.</p>
+                        <p>A imagem de Nossa Senhora da Paz nos convida a sermos instrumentos de paz em nossa família, comunidade e sociedade. Ela nos ensina que a verdadeira paz nasce do coração reconciliado com Deus.</p>
+                        <p>Em nossa paróquia, celebramos sua festa no dia <strong>9 de Julho</strong>, quando toda a comunidade se reúne para honrar nossa querida Padroeira com novenas, procissões e celebrações especiais.</p>
+                    </div>
+                    <div class="padroeira-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <blockquote>"Deixo-vos a paz, a minha paz vos dou; não vo-la dou como o mundo a dá."</blockquote>
+                        <cite>— João 14,27</cite>
+                    </div>
+                    <div class="padroeira-feast">
+                        <div class="feast-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="feast-info">
+                            <span class="feast-label">Festa da Padroeira</span>
+                            <span class="feast-date">9 de Julho</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sacerdotes Section -->
+    <section class="sacerdotes-section" id="sacerdotes">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Nossos Pastores</div>
+                <h2 class="section-title">Sacerdotes da Paróquia</h2>
+                <p class="section-subtitle">Conheça os padres que guiam nossa comunidade na fé e nos sacramentos.</p>
+            </div>
+
+            <div class="sacerdotes-carousel-wrapper">
+                <div class="sacerdotes-carousel" id="sacerdotesCarousel">
+                    <!-- Padre Celso -->
+                    <div class="sacerdote-slide active" data-sacerdote="celso">
+                        <div class="sacerdote-card">
+                            <div class="sacerdote-image">
+                                <img src="assets/images/padres/padreCelso.jpg" alt="Padre Celso">
+                                <div class="sacerdote-badge paroco">Pároco</div>
+                            </div>
+                            <div class="sacerdote-info">
+                                <h3 class="sacerdote-nome">Padre Celso</h3>
+                                <span class="sacerdote-cargo">Pároco da Paróquia</span>
+                                <p class="sacerdote-bio">Padre Celso é o pároco titular da Igreja Matriz Nossa Senhora da Paz. Com dedicação e amor pastoral, tem guiado nossa comunidade no caminho da fé, sempre atento às necessidades espirituais e materiais dos fiéis.</p>
+                                <div class="sacerdote-detalhes">
+                                    <div class="detalhe-item">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <span>Ordenado há mais de 20 anos</span>
+                                    </div>
+                                    <div class="detalhe-item">
+                                        <i class="fas fa-church"></i>
+                                        <span>Pároco desde 2018</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Padre Alexandre -->
+                    <div class="sacerdote-slide" data-sacerdote="alexandre">
+                        <div class="sacerdote-card">
+                            <div class="sacerdote-image">
+                                <img src="assets/images/padres/padreAlexandre.jpg" alt="Padre Alexandre">
+                                <div class="sacerdote-badge administrador">Administrador</div>
+                            </div>
+                            <div class="sacerdote-info">
+                                <h3 class="sacerdote-nome">Padre Alexandre</h3>
+                                <span class="sacerdote-cargo">Administrador Paroquial</span>
+                                <p class="sacerdote-bio">Padre Alexandre está atualmente à frente das atividades paroquiais como Administrador. Com zelo e dedicação, tem conduzido nossa comunidade mantendo viva a chama da fé e o espírito de comunhão entre os fiéis.</p>
+                                <div class="sacerdote-detalhes">
+                                    <div class="detalhe-item">
+                                        <i class="fas fa-hands-helping"></i>
+                                        <span>Conduzindo as atividades atuais</span>
+                                    </div>
+                                    <div class="detalhe-item">
+                                        <i class="fas fa-heart"></i>
+                                        <span>Dedicação à comunidade</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sacerdotes-nav">
+                    <button class="sacerdote-nav-btn prev" onclick="changeSacerdote(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="sacerdote-dots">
+                        <span class="dot active" onclick="goToSacerdote(0)"></span>
+                        <span class="dot" onclick="goToSacerdote(1)"></span>
+                    </div>
+                    <button class="sacerdote-nav-btn next" onclick="changeSacerdote(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="atendimento-box">
+                <div class="atendimento-header">
+                    <div class="atendimento-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Horário de Atendimento</h4>
+                </div>
+                <p class="atendimento-desc">Os padres atendem na secretaria paroquial nos seguintes horários:</p>
+                <div class="atendimento-horarios">
+                    <div class="horario-box">
+                        <span class="horario-dia">Segunda a Sexta</span>
+                        <span class="horario-tempo">08h às 12h | 14h às 17h</span>
+                    </div>
+                    <div class="horario-box">
+                        <span class="horario-dia">Sábado</span>
+                        <span class="horario-tempo">08h às 12h</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/5500000000000" class="btn btn-outline-primary">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Agendar Atendimento</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Missas Section -->
     <section class="missas-section" id="missas">
-        <div class="missas-bg-pattern"></div>
         <div class="container">
             <div class="section-header center">
                 <div class="section-tag">Programação Semanal</div>
@@ -185,161 +470,93 @@
                 <p class="section-subtitle">Confira os horários das celebrações eucarísticas e participe da nossa comunidade de fé.</p>
             </div>
             
-            <div class="missas-schedule">
-                <!-- Domingo - Destaque -->
-                <div class="schedule-card domingo">
-                    <div class="schedule-header">
-                        <div class="schedule-day">
-                            <span class="day-name">Domingo</span>
-                            <span class="day-label">Dia do Senhor</span>
-                        </div>
-                        <div class="schedule-icon">
-                            <i class="fas fa-sun"></i>
+            <div class="missas-grid-new">
+                <!-- Domingo Destaque -->
+                <div class="missa-domingo">
+                    <div class="domingo-header">
+                        <div class="domingo-icon"><i class="fas fa-sun"></i></div>
+                        <div class="domingo-titulo">
+                            <h3>Domingo</h3>
+                            <span>Dia do Senhor</span>
                         </div>
                     </div>
-                    <div class="schedule-times">
-                        <div class="time-item">
-                            <span class="time">08h</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa Matinal</span>
-                                <span class="time-desc">Com coral</span>
+                    <div class="domingo-horarios">
+                        <div class="domingo-time">
+                            <span class="dt-hora">08h</span>
+                            <div class="dt-info">
+                                <strong>Missa Matinal</strong>
+                                <span>Com coral</span>
                             </div>
                         </div>
-                        <div class="time-item">
-                            <span class="time">11h</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa Comunitária</span>
-                                <span class="time-desc">Pastorais</span>
+                        <div class="domingo-time">
+                            <span class="dt-hora">11h</span>
+                            <div class="dt-info">
+                                <strong>Missa Comunitária</strong>
+                                <span>Pastorais</span>
                             </div>
                         </div>
-                        <div class="time-item">
-                            <span class="time">18h</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa Vespertina</span>
-                                <span class="time-desc">Encerramento</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Terça-feira -->
-                <div class="schedule-card">
-                    <div class="schedule-header">
-                        <div class="schedule-day">
-                            <span class="day-name">Terça-feira</span>
-                            <span class="day-label">Semanal</span>
-                        </div>
-                        <div class="schedule-icon">
-                            <i class="fas fa-moon"></i>
-                        </div>
-                    </div>
-                    <div class="schedule-times">
-                        <div class="time-item">
-                            <span class="time">19h30</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa Semanal</span>
-                                <span class="time-desc">Igreja Matriz</span>
+                        <div class="domingo-time">
+                            <span class="dt-hora">18h</span>
+                            <div class="dt-info">
+                                <strong>Missa Vespertina</strong>
+                                <span>Encerramento</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Quarta-feira -->
-                <div class="schedule-card">
-                    <div class="schedule-header">
-                        <div class="schedule-day">
-                            <span class="day-name">Quarta-feira</span>
-                            <span class="day-label">Semanal</span>
-                        </div>
-                        <div class="schedule-icon">
-                            <i class="fas fa-pray"></i>
-                        </div>
+                <!-- Dias da Semana -->
+                <div class="missas-semana">
+                    <div class="missa-card-compact">
+                        <div class="mcc-dia">Terça</div>
+                        <div class="mcc-horario">19h30</div>
+                        <div class="mcc-tipo">Missa Semanal</div>
                     </div>
-                    <div class="schedule-times">
-                        <div class="time-item">
-                            <span class="time">19h30</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa Semanal</span>
-                                <span class="time-desc">Adoração ao Santíssimo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Quinta-feira -->
-                <div class="schedule-card">
-                    <div class="schedule-header">
-                        <div class="schedule-day">
-                            <span class="day-name">Quinta-feira</span>
-                            <span class="day-label">Semanal</span>
-                        </div>
-                        <div class="schedule-icon">
-                            <i class="fas fa-cross"></i>
-                        </div>
+                    <div class="missa-card-compact">
+                        <div class="mcc-dia">Quarta</div>
+                        <div class="mcc-horario">19h30</div>
+                        <div class="mcc-tipo">Adoração ao Santíssimo</div>
                     </div>
-                    <div class="schedule-times">
-                        <div class="time-item">
-                            <span class="time">09h</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa Matinal</span>
-                                <span class="time-desc">Missa diária</span>
-                            </div>
-                        </div>
-                        <div class="time-item novo">
-                            <span class="badge-novo">Novo</span>
-                            <span class="time">19h30</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa Noturna</span>
-                                <span class="time-desc">A partir de fevereiro</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Sexta-feira - Especial -->
-                <div class="schedule-card especial">
-                    <div class="schedule-ribbon">
-                        <i class="fas fa-star"></i> Especial
-                    </div>
-                    <div class="schedule-header">
-                        <div class="schedule-day">
-                            <span class="day-name">Sexta-feira</span>
-                            <span class="day-label">Missa das Ânimas</span>
-                        </div>
-                        <div class="schedule-icon">
-                            <i class="fas fa-candle-holder"></i>
-                        </div>
-                    </div>
-                    <div class="schedule-times">
-                        <div class="time-item">
-                            <span class="time">19h30</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa das Ânimas</span>
-                                <span class="time-desc">Missas Encomendadas e Bênção</span>
+                    <div class="missa-card-compact duplo">
+                        <div class="mcc-dia">Quinta</div>
+                        <div class="mcc-horarios-duplo">
+                            <div class="mcc-h-item">
+                                <span class="mcc-horario">09h</span>
+                                <span class="mcc-tipo">Missa Matinal</span>
+                            </div>
+                            <div class="mcc-h-item novo">
+                                <span class="mcc-badge">Novo</span>
+                                <span class="mcc-horario">19h30</span>
+                                <span class="mcc-tipo">Missa Noturna</span>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Sábado -->
-                <div class="schedule-card">
-                    <div class="schedule-header">
-                        <div class="schedule-day">
-                            <span class="day-name">Sábado</span>
-                            <span class="day-label">Vigília</span>
-                        </div>
-                        <div class="schedule-icon">
-                            <i class="fas fa-church"></i>
-                        </div>
+                    <div class="missa-card-compact especial">
+                        <div class="mcc-ribbon"><i class="fas fa-star"></i></div>
+                        <div class="mcc-dia">Sexta</div>
+                        <div class="mcc-horario">19h30</div>
+                        <div class="mcc-tipo">Missa das Ânimas</div>
+                        <div class="mcc-obs">Missas Encomendadas e Bênção</div>
                     </div>
-                    <div class="schedule-times">
-                        <div class="time-item">
-                            <span class="time">19h</span>
-                            <div class="time-details">
-                                <span class="time-title">Missa da Vigília</span>
-                                <span class="time-desc">Antecipa o domingo</span>
+
+                    <div class="missa-card-compact duplo sabado-duplo">
+                        <div class="mcc-dia">Sábado</div>
+                        <div class="mcc-horarios-duplo">
+                            <div class="mcc-h-item">
+                                <span class="mcc-badge-sabado segundo">2º Sábado</span>
+                                <span class="mcc-horario">15h</span>
+                                <span class="mcc-tipo">Missa Especial</span>
+                            </div>
+                            <div class="mcc-h-item sabado-segundo">
+                                <span class="mcc-badge-sabado quarto">4º Sábado</span>
+                                <span class="mcc-horario">19h</span>
+                                <span class="mcc-tipo">Missa da Vigília</span>
                             </div>
                         </div>
+                        <div class="mcc-obs">Antecipa o domingo</div>
                     </div>
                 </div>
             </div>
@@ -378,6 +595,19 @@
                 <div class="section-tag">Agenda Paroquial</div>
                 <h2 class="section-title">Eventos e Celebrações</h2>
                 <p class="section-subtitle">Fique por dentro das próximas atividades e celebrações da nossa paróquia.</p>
+            </div>
+
+            <!-- Banners de Eventos -->
+            <div class="eventos-banners">
+                <div class="eventos-banner-slider" id="eventosBannerSlider">
+                    <!-- Banners serão inseridos aqui -->
+                    <div class="evento-banner-placeholder">
+                        <div class="banner-placeholder-content">
+                            <i class="fas fa-image"></i>
+                            <span>Espaço para Banner de Eventos</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="eventos-timeline">
@@ -971,86 +1201,155 @@
 
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <img src="assets/images/logoBranca.png" alt="Igreja Matriz" class="footer-logo-img">
-                            
-                        </div>
-                        <p class="footer-description">Uma comunidade de fé, esperança e amor, dedicada a servir a Deus e ao próximo.</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        </div>
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logoBranca.png" alt="Igreja Matriz" class="footer-logo-img">
+                        <img src="assets/images/PaZcom.png" alt="Pazcom" class="footer-logo-img2">
                     </div>
-                    
-                    <div class="footer-links">
-                        <h4>Links Rápidos</h4>
-                        <ul>
-                            <li><a href="#inicio">Início</a></li>
-                            <li><a href="#sobre">Sobre Nós</a></li>
-                            <li><a href="#missas">Horários das Missas</a></li>
-                            <li><a href="#eventos">Eventos</a></li>
-                            <li><a href="#pastorais">Pastorais</a></li>
-                            <li><a href="#galeria">Galeria</a></li>
-                            <li><a href="#contato">Contato</a></li>
-                        </ul>
+                    <p class="footer-description">Uma comunidade de fé, esperança e amor, dedicada a servir a Deus e ao próximo.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#missas">Horários das Missas</a></li>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#pastorais">Pastorais</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
 
-                    <div class="footer-links">
-                        <h4>Sacramentos</h4>
-                        <ul>
-                            <li><a href="#">Batismo</a></li>
-                            <li><a href="#">Primeira Eucaristia</a></li>
-                            <li><a href="#">Crisma</a></li>
-                            <li><a href="#">Matrimônio</a></li>
-                            <li><a href="#">Confissão</a></li>
-                            <li><a href="#">Unção dos Enfermos</a></li>
-                        </ul>
-                    </div>
+                <div class="footer-links">
+                    <h4>Sacramentos</h4>
+                    <ul>
+                        <li><a href="#">Batismo</a></li>
+                        <li><a href="#">Primeira Eucaristia</a></li>
+                        <li><a href="#">Crisma</a></li>
+                        <li><a href="#">Matrimônio</a></li>
+                        <li><a href="#">Confissão</a></li>
+                        <li><a href="#">Unção dos Enfermos</a></li>
+                    </ul>
+                </div>
 
-                    <div class="footer-contact">
-                        <h4>Contato</h4>
-                        <div class="footer-contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Praça da Matriz, 100<br>Centro - CEP 00000-000</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>(00) 0000-0000</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contato@matriznspaz.com.br</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <i class="far fa-clock"></i>
-                            <span>Secretaria: Seg-Sex 8h-17h</span>
-                        </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Praça da Matriz, 100<br>Centro - CEP 00000-000</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>(00) 0000-0000</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4724282933263328072a2633352e3d293437263d6924282a692535">[email&#160;protected]</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="far fa-clock"></i>
+                        <span>Secretaria: Seg-Sex 8h-17h</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="copyright">© 2026 Igreja Matriz Nossa Senhora da Paz. Todos os direitos reservados.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Termos de Uso</a>
-                </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="copyright">© 2026 Igreja Matriz Nossa Senhora da Paz. Todos os direitos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-cross"></i>
+            </div>
+            <div class="cookie-text">
+                <h4 class="cookie-greeting">Salve Maria!</h4>
+                <p>Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a> e com o uso de cookies para análise de tráfego e personalização de conteúdo.</p>
+            </div>
+            <div class="cookie-actions">
+                <button class="btn btn-primary" onclick="acceptCookies()">Aceitar Cookies</button>
+                <button class="btn btn-outline-dark" onclick="declineCookies()">Recusar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pastoral Modal -->
+    <div class="modal-overlay" id="pastoralModal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closePastoralModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-icon" id="modalIcon"></div>
+                    <h3 class="modal-title" id="modalTitle"></h3>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-info-grid">
+                        <div class="modal-info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Reuniões</strong>
+                                <span id="modalReuniao"></span>
+                            </div>
+                        </div>
+                        <div class="modal-info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horário</strong>
+                                <span id="modalHorario"></span>
+                            </div>
+                        </div>
+                        <div class="modal-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Local</strong>
+                                <span id="modalLocal"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-coordenadores">
+                        <h4>Coordenadores</h4>
+                        <div class="coordenadores-list" id="modalCoordenadores"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-whatsapp" id="modalWhatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Entrar em Contato</span>
+                    </a>
+                    <button class="btn btn-outline-dark" onclick="closePastoralModal()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -159,14 +159,93 @@ const pastoraisData = {
 };
 
 // ============================================
-// PRELOADER
+// PRELOADER - ANIMAÇÃO AVANÇADA
 // ============================================
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
+    const logo = document.getElementById('preloaderLogo');
+    
+    // Adicionar mais partículas dinamicamente
+    createFloatingParticles();
+    
+    // Tempo total da animação: 2.5 segundos
     setTimeout(() => {
-        preloader.classList.add('hidden');
-    }, 1500);
+        // Fade out suave do preloader
+        preloader.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        preloader.style.opacity = '0';
+        preloader.style.transform = 'scale(1.1)';
+        
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 800);
+    }, 5200);
 });
+
+// Criar partículas flutuantes ao redor da logo
+function createFloatingParticles() {
+    const container = document.querySelector('.preloader-particles');
+    if (!container) return;
+    
+    const particleCount = 12;
+    const colors = ['#C9A860', '#E8D4A8', '#A88940'];
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'floating-particle';
+        
+        // Posição aleatória em círculo
+        const angle = (i / particleCount) * Math.PI * 2;
+        const radius = 80 + Math.random() * 40;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+        
+        particle.style.cssText = `
+            position: absolute;
+            width: ${4 + Math.random() * 6}px;
+            height: ${4 + Math.random() * 6}px;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(${x}px, ${y}px);
+            opacity: ${0.4 + Math.random() * 0.6};
+            box-shadow: 0 0 ${10 + Math.random() * 10}px currentColor;
+            animation: floatRandom ${2 + Math.random() * 3}s ease-in-out infinite;
+            animation-delay: ${Math.random() * 2}s;
+        `;
+        
+        container.appendChild(particle);
+    }
+    
+    // Adicionar animação CSS dinamicamente
+    if (!document.getElementById('particle-animation')) {
+        const style = document.createElement('style');
+        style.id = 'particle-animation';
+        style.textContent = `
+            @keyframes floatRandom {
+                0%, 100% { 
+                    transform: translate(var(--x), var(--y)) translateY(0) scale(1);
+                    opacity: 0.6;
+                }
+                50% { 
+                    transform: translate(var(--x), var(--y)) translateY(-20px) scale(1.2);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Definir variáveis CSS para cada partícula
+    document.querySelectorAll('.floating-particle').forEach((particle, index) => {
+        const angle = (index / particleCount) * Math.PI * 2;
+        const radius = 80 + Math.random() * 40;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+        particle.style.setProperty('--x', `${x}px`);
+        particle.style.setProperty('--y', `${y}px`);
+    });
+}
 
 // ============================================
 // NAVBAR
@@ -632,3 +711,362 @@ function addStaggerDelay() {
 }
 
 document.addEventListener('DOMContentLoaded', addStaggerDelay);
+// ============================================
+// SACERDOTES CAROUSEL
+// ============================================
+let currentSacerdote = 0;
+const sacerdoteSlides = document.querySelectorAll('.sacerdote-slide');
+const sacerdoteDots = document.querySelectorAll('.sacerdote-dots .dot');
+const totalSacerdotes = sacerdoteSlides.length;
+
+function changeSacerdote(direction) {
+    currentSacerdote += direction;
+    
+    if (currentSacerdote < 0) {
+        currentSacerdote = totalSacerdotes - 1;
+    } else if (currentSacerdote >= totalSacerdotes) {
+        currentSacerdote = 0;
+    }
+    
+    updateSacerdoteDisplay();
+}
+
+function goToSacerdote(index) {
+    currentSacerdote = index;
+    updateSacerdoteDisplay();
+}
+
+function updateSacerdoteDisplay() {
+    sacerdoteSlides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentSacerdote) {
+            slide.classList.add('active');
+        }
+    });
+    
+    sacerdoteDots.forEach((dot, index) => {
+        dot.classList.remove('active');
+        if (index === currentSacerdote) {
+            dot.classList.add('active');
+        }
+    });
+}
+
+// Auto-rotate sacerdotes every 8 seconds
+setInterval(() => {
+    if (document.visibilityState === 'visible') {
+        changeSacerdote(1);
+    }
+}, 8000);
+
+// ============================================
+// COOKIE BANNER
+// ============================================
+function initCookieBanner() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    if (!cookieBanner) return;
+    
+    const cookieChoice = localStorage.getItem('cookieConsent');
+    
+    if (!cookieChoice) {
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 2000);
+    }
+}
+
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    hideCookieBanner();
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    hideCookieBanner();
+}
+
+function hideCookieBanner() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    if (cookieBanner) {
+        cookieBanner.classList.remove('show');
+    }
+}
+
+// Initialize cookie banner
+document.addEventListener('DOMContentLoaded', initCookieBanner);
+
+// ============================================
+// LITURGIA DO DIA - API
+// ============================================
+async function carregarLiturgiaDodia() {
+    const liturgiaData = document.getElementById('liturgiaData');
+    const liturgiaNome = document.getElementById('liturgiaNome');
+    const liturgiaCor = document.getElementById('liturgiaCor');
+    const leiturasLista = document.getElementById('leiturasLista');
+    
+    if (!leiturasLista) return;
+    
+    try {
+        const response = await fetch('https://liturgia.up.railway.app/v2/');
+        const data = await response.json();
+        
+        // Atualizar data
+        if (liturgiaData) {
+            liturgiaData.textContent = data.data || new Date().toLocaleDateString('pt-BR');
+        }
+        
+        // Atualizar nome da liturgia
+        if (liturgiaNome) {
+            liturgiaNome.textContent = data.liturgia || 'Liturgia do dia';
+        }
+        
+        // Atualizar cor litúrgica
+        if (liturgiaCor && data.cor) {
+            const corClass = data.cor.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            liturgiaCor.textContent = data.cor;
+            liturgiaCor.className = 'liturgia-cor ' + corClass;
+        }
+        
+        // Montar lista de leituras
+        let leiturasHTML = '';
+        
+        // Primeira Leitura
+        if (data.leituras?.primeiraLeitura?.length > 0) {
+            const primeiraLeitura = data.leituras.primeiraLeitura[0];
+            leiturasHTML += `
+                <div class="leitura-item">
+                    <div class="leitura-icon"><i class="fas fa-book"></i></div>
+                    <div class="leitura-info">
+                        <span class="leitura-tipo">1ª Leitura</span>
+                        <span class="leitura-referencia">${primeiraLeitura.referencia || ''}</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Segunda Leitura (se houver)
+        if (data.leituras?.segundaLeitura?.length > 0) {
+            const segundaLeitura = data.leituras.segundaLeitura[0];
+            leiturasHTML += `
+                <div class="leitura-item">
+                    <div class="leitura-icon"><i class="fas fa-book"></i></div>
+                    <div class="leitura-info">
+                        <span class="leitura-tipo">2ª Leitura</span>
+                        <span class="leitura-referencia">${segundaLeitura.referencia || ''}</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Salmo
+        if (data.leituras?.salmo?.length > 0) {
+            const salmo = data.leituras.salmo[0];
+            leiturasHTML += `
+                <div class="leitura-item">
+                    <div class="leitura-icon"><i class="fas fa-music"></i></div>
+                    <div class="leitura-info">
+                        <span class="leitura-tipo">Salmo</span>
+                        <span class="leitura-referencia">${salmo.referencia || ''}</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Evangelho
+        if (data.leituras?.evangelho?.length > 0) {
+            const evangelho = data.leituras.evangelho[0];
+            leiturasHTML += `
+                <div class="leitura-item">
+                    <div class="leitura-icon"><i class="fas fa-cross"></i></div>
+                    <div class="leitura-info">
+                        <span class="leitura-tipo">Evangelho</span>
+                        <span class="leitura-referencia">${evangelho.referencia || ''}</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        leiturasLista.innerHTML = leiturasHTML || '<p style="text-align: center; color: var(--gray);">Não foi possível carregar as leituras.</p>';
+        
+    } catch (error) {
+        console.error('Erro ao carregar liturgia:', error);
+        leiturasLista.innerHTML = '<p style="text-align: center; color: var(--gray);">Não foi possível carregar as leituras. Tente novamente mais tarde.</p>';
+    }
+}
+
+// ============================================
+// SANTO DO DIA - WEB SCRAPING via CORS proxy
+// ============================================
+async function carregarSantoDodia() {
+    const santoData = document.getElementById('santoData');
+    const santoNome = document.getElementById('santoNome');
+    const santoFrase = document.getElementById('santoFrase');
+    const santoImagem = document.getElementById('santoImagem');
+    
+    if (!santoNome) return;
+    
+    // Definir a data atual
+    const hoje = new Date();
+    const dia = hoje.getDate();
+    const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    
+    if (santoData) {
+        santoData.textContent = `${dia} de ${meses[hoje.getMonth()]}`;
+    }
+    
+    // Lista de santos com frases (banco local de frases conhecidas)
+    const santosFrases = {
+        'são joão de brito': '"Ó santo sacerdote, exímio missionário e evangelizador, fortalecei e encorajai aqueles que têm a mesma missão."',
+        'nossa senhora de lourdes': '"Sou a Imaculada Conceição."',
+        'santa escolástica': '"Quem ama o perigo nele perecerá."',
+        'são brás': '"Senhor, concedei a todos que invocam minha intercessão a cura de suas doenças."',
+        'santa águeda': '"Jesus Cristo é meu único tesouro."',
+        'são paulo miki': '"Não há caminho para a salvação senão aquele que vos mostro."',
+        'são cirilo': '"Aquele que não conhece as Escrituras não conhece a Cristo."',
+        'são metodio': '"Trabalhemos juntos pela unidade da fé."',
+        'são pedro canísio': '"Ó Senhor, fazei-me conhecer os mistérios de vossa divina bondade."',
+        'santo andré dung lac': '"Estou pronto para morrer pela fé em Cristo."',
+        'são josé': '"Ele era justo e não quis difamá-la."',
+        'santo antônio': '"Se procuras milagres, olha: morte, erro, calamidade, demônio e lepra fogem."',
+        'são francisco de assis': '"Começa fazendo o que é necessário, depois o que é possível, e de repente estarás fazendo o impossível."',
+        'santa teresinha': '"Quero passar meu céu fazendo bem à terra."',
+        'são pio': '"Reze, espere e não se preocupe."',
+        'são bento': '"Ora et labora - Reza e trabalha."',
+        'nossa senhora da paz': '"Deixo-vos a paz, a minha paz vos dou."',
+        'santa rita de cássia': '"Senhor, dai-me a força para suportar os espinhos desta vida."',
+        'são joão paulo ii': '"Não tenham medo. Abram, escancarei as portas a Cristo!"',
+        'são maximiliano kolbe': '"O ódio não é uma força criativa. Somente o amor o é."',
+    };
+    
+    // Tentar buscar informações do santo
+    try {
+        // Como não temos uma API pública direta para o santo do dia, 
+        // vamos usar dados estáticos baseados na data
+        const santosDoMes = {
+            '2-4': { nome: 'São João de Brito', frase: santosFrases['são joão de brito'] },
+            '2-3': { nome: 'São Brás', frase: santosFrases['são brás'] },
+            '2-5': { nome: 'Santa Águeda', frase: santosFrases['santa águeda'] },
+            '2-6': { nome: 'São Paulo Miki e Companheiros', frase: santosFrases['são paulo miki'] },
+            '2-10': { nome: 'Santa Escolástica', frase: santosFrases['santa escolástica'] },
+            '2-11': { nome: 'Nossa Senhora de Lourdes', frase: santosFrases['nossa senhora de lourdes'] },
+            '2-14': { nome: 'São Cirilo e São Metódio', frase: santosFrases['são cirilo'] },
+            '1-24': { nome: 'Nossa Senhora da Paz', frase: santosFrases['nossa senhora da paz'] },
+        };
+        
+        const chaveData = `${hoje.getMonth() + 1}-${dia}`;
+        const santoHoje = santosDoMes[chaveData];
+        
+        if (santoHoje) {
+            santoNome.textContent = santoHoje.nome;
+            if (santoFrase && santoHoje.frase) {
+                santoFrase.textContent = santoHoje.frase;
+            } else if (santoFrase) {
+                santoFrase.textContent = '';
+            }
+        } else {
+            // Buscar da página da Canção Nova via proxy ou mostrar mensagem padrão
+            santoNome.textContent = 'Santo do Dia';
+            if (santoFrase) {
+                santoFrase.textContent = '';
+            }
+            
+            // Tentar buscar via API alternativa
+            await buscarSantoViaCancaoNova();
+        }
+        
+        // Tentar buscar imagem do santo
+        await buscarImagemSanto();
+        
+    } catch (error) {
+        console.error('Erro ao carregar santo do dia:', error);
+        santoNome.textContent = 'Santo do Dia';
+        if (santoFrase) {
+            santoFrase.textContent = '';
+        }
+    }
+}
+
+// Função auxiliar para tentar buscar santo da Canção Nova
+async function buscarSantoViaCancaoNova() {
+    const santoNome = document.getElementById('santoNome');
+    const santoFrase = document.getElementById('santoFrase');
+    
+    try {
+        // Usar um proxy CORS público (em produção, configure seu próprio proxy)
+        const proxyUrl = 'https://api.allorigins.win/get?url=';
+        const targetUrl = encodeURIComponent('https://santo.cancaonova.com/');
+        
+        const response = await fetch(proxyUrl + targetUrl);
+        const data = await response.json();
+        
+        if (data.contents) {
+            // Extrair o nome do santo do HTML
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data.contents, 'text/html');
+            const titulo = doc.querySelector('h1');
+            
+            if (titulo && santoNome) {
+                // Limpar o nome (remover "Santo do Dia - " se presente)
+                let nomeSanto = titulo.textContent.trim();
+                nomeSanto = nomeSanto.replace(/^Santo do Dia\s*[-–]\s*/i, '');
+                santoNome.textContent = nomeSanto || 'Santo do Dia';
+            }
+        }
+    } catch (error) {
+        console.error('Erro ao buscar santo via Canção Nova:', error);
+        // Mantém o texto padrão já definido
+    }
+}
+
+
+// Função para buscar imagem do santo
+async function buscarImagemSanto() {
+    const santoImagem = document.getElementById('santoImagem');
+    if (!santoImagem) return;
+    
+    try {
+        // Usar um proxy CORS público
+        const proxyUrl = 'https://api.allorigins.win/get?url=';
+        const targetUrl = encodeURIComponent('https://santo.cancaonova.com/');
+        
+        const response = await fetch(proxyUrl + targetUrl);
+        const data = await response.json();
+        
+        if (data.contents) {
+            // Extrair a imagem do santo do HTML
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data.contents, 'text/html');
+            
+            // Tentar encontrar a imagem principal do santo
+            const imagemSanto = doc.querySelector('img[src*="santo"]') || 
+                               doc.querySelector('.wp-post-image') || 
+                               doc.querySelector('article img') ||
+                               doc.querySelector('.entry-content img');
+            
+            if (imagemSanto && imagemSanto.src) {
+                // Criar elemento de imagem
+                const img = document.createElement('img');
+                img.src = imagemSanto.src;
+                img.alt = 'Santo do Dia';
+                img.onerror = function() {
+                    // Se a imagem falhar ao carregar, mantém o placeholder
+                    console.log('Erro ao carregar imagem do santo');
+                };
+                img.onload = function() {
+                    // Substituir o placeholder pela imagem
+                    santoImagem.innerHTML = '';
+                    santoImagem.appendChild(img);
+                };
+            }
+        }
+    } catch (error) {
+        console.error('Erro ao buscar imagem do santo:', error);
+        // Mantém o placeholder se houver erro
+    }
+}
+
+// Inicializar liturgia e santo do dia
+document.addEventListener('DOMContentLoaded', () => {
+    carregarLiturgiaDodia();
+    carregarSantoDodia();
+});
