@@ -107,7 +107,7 @@
                 <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="https://wa.me/5500000000000" target="_blank" class="btn-nav-cta">
+                <a href="https://api.whatsapp.com/send/?phone=551146781432&text&type=phone_number&app_absent=0" target="_blank" class="btn-nav-cta">
                     <i class="fab fa-whatsapp"></i>
                     <span>Fale Conosco</span>
                 </a>
@@ -364,8 +364,8 @@
         <div class="container">
             <div class="section-header center">
                 <div class="section-tag">Nossos Pastores</div>
-                <h2 class="section-title">Sacerdotes da Paróquia</h2>
-                <p class="section-subtitle">Conheça os padres que guiam nossa comunidade na fé e nos sacramentos.</p>
+                <h2 class="section-title">Sacerdotes e Diácono da Paróquia</h2>
+                <p class="section-subtitle">Conheça os padres e diácono que guiam nossa comunidade na fé e nos sacramentos.</p>
             </div>
 
             <div class="sacerdotes-carousel-wrapper">
@@ -374,7 +374,7 @@
                     <div class="sacerdote-slide active" data-sacerdote="celso">
                         <div class="sacerdote-card">
                             <div class="sacerdote-image">
-                                <img src="assets/images/padres/padreCelso.jpg" alt="Padre Celso">
+                                <img src="assets/images/padresEdiacono/padreCelso.jpg" alt="Padre Celso">
                                 <div class="sacerdote-badge paroco">Pároco</div>
                             </div>
                             <div class="sacerdote-info">
@@ -399,7 +399,7 @@
                     <div class="sacerdote-slide" data-sacerdote="alexandre">
                         <div class="sacerdote-card">
                             <div class="sacerdote-image">
-                                <img src="assets/images/padres/padreAlexandre.jpg" alt="Padre Alexandre">
+                                <img src="assets/images/padresEdiacono/padreAlexandre.jpg" alt="Padre Alexandre">
                                 <div class="sacerdote-badge administrador">Administrador</div>
                             </div>
                             <div class="sacerdote-info">
@@ -419,6 +419,31 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Diácono Cícero -->
+                    <div class="sacerdote-slide" data-sacerdote="cicero">
+                        <div class="sacerdote-card">
+                            <div class="sacerdote-image">
+                                <img src="assets/images/padresEdiacono/diaconoCicero.jpg" alt="Diácono Cícero">
+                                <div class="sacerdote-badge diacono">Diácono</div>
+                            </div>
+                            <div class="sacerdote-info">
+                                <h3 class="sacerdote-nome">Diácono Cícero</h3>
+                                <span class="sacerdote-cargo">Diácono Permanente</span>
+                                <p class="sacerdote-bio">Diácono Cícero serve nossa comunidade com dedicação, auxiliando nas celebrações litúrgicas, na administração paroquial e no atendimento aos fiéis. Sua presença fortalece nossa paróquia no serviço e na caridade.</p>
+                                <div class="sacerdote-detalhes">
+                                    <div class="detalhe-item">
+                                        <i class="fas fa-hands-helping"></i>
+                                        <span>Serviço à comunidade</span>
+                                    </div>
+                                    <div class="detalhe-item">
+                                        <i class="fas fa-heart"></i>
+                                        <span>Dedicação e caridade</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="sacerdotes-nav">
@@ -428,6 +453,7 @@
                     <div class="sacerdote-dots">
                         <span class="dot active" onclick="goToSacerdote(0)"></span>
                         <span class="dot" onclick="goToSacerdote(1)"></span>
+                        <span class="dot" onclick="goToSacerdote(2)"></span>
                     </div>
                     <button class="sacerdote-nav-btn next" onclick="changeSacerdote(1)">
                         <i class="fas fa-chevron-right"></i>
@@ -440,20 +466,43 @@
                     <div class="atendimento-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <h4>Horário de Atendimento</h4>
+                    <h4>Horários de Atendimento</h4>
                 </div>
-                <p class="atendimento-desc">Os padres atendem na secretaria paroquial nos seguintes horários:</p>
-                <div class="atendimento-horarios">
-                    <div class="horario-box">
-                        <span class="horario-dia">Segunda a Sexta</span>
-                        <span class="horario-tempo">08h às 12h | 14h às 17h</span>
+                <div class="atendimento-grid">
+                    <div class="atendimento-item">
+                        <div class="atendimento-item-header">
+                            <i class="fas fa-user-tie"></i>
+                            <h5>Atendimento do Padre</h5>
+                        </div>
+                        <div class="atendimento-horarios-lista">
+                            <div class="horario-linha">
+                                <span class="horario-dia">Quintas-feiras</span>
+                                <span class="horario-tempo">14h às 17h</span>
+                            </div>
+                            <div class="horario-linha">
+                                <span class="horario-dia">Sextas-feiras</span>
+                                <span class="horario-tempo">09h às 12h</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="horario-box">
-                        <span class="horario-dia">Sábado</span>
-                        <span class="horario-tempo">08h às 12h</span>
+                    <div class="atendimento-item">
+                        <div class="atendimento-item-header">
+                            <i class="fas fa-user"></i>
+                            <h5>Atendimento do Diácono</h5>
+                        </div>
+                        <div class="atendimento-horarios-lista">
+                            <div class="horario-linha">
+                                <span class="horario-dia">Terças-feiras</span>
+                                <span class="horario-tempo">09h às 12h</span>
+                            </div>
+                            <div class="horario-linha">
+                                <span class="horario-dia"></span>
+                                <span class="horario-tempo">13h às 17h</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <a href="https://wa.me/5500000000000" class="btn btn-outline-primary">
+                <a href="https://api.whatsapp.com/send/?phone=551146781432&text&type=phone_number&app_absent=0" class="btn btn-outline-primary">
                     <i class="fab fa-whatsapp"></i>
                     <span>Agendar Atendimento</span>
                 </a>
@@ -485,21 +534,18 @@
                             <span class="dt-hora">08h</span>
                             <div class="dt-info">
                                 <strong>Missa Matinal</strong>
-                                <span>Com coral</span>
                             </div>
                         </div>
                         <div class="domingo-time">
                             <span class="dt-hora">11h</span>
                             <div class="dt-info">
                                 <strong>Missa Comunitária</strong>
-                                <span>Pastorais</span>
                             </div>
                         </div>
                         <div class="domingo-time">
                             <span class="dt-hora">18h</span>
                             <div class="dt-info">
                                 <strong>Missa Vespertina</strong>
-                                <span>Encerramento</span>
                             </div>
                         </div>
                     </div>
@@ -507,16 +553,18 @@
 
                 <!-- Dias da Semana -->
                 <div class="missas-semana">
-                    <div class="missa-card-compact">
+                    <div class="missa-card-compact especial">
+                        <div class="mcc-ribbon"><i class="fas fa-cross"></i></div>
                         <div class="mcc-dia">Terça</div>
                         <div class="mcc-horario">19h30</div>
-                        <div class="mcc-tipo">Missa Semanal</div>
+                        <div class="mcc-tipo">1ª Terça: Missa em sufrágio das almas</div>
                     </div>
 
                     <div class="missa-card-compact">
                         <div class="mcc-dia">Quarta</div>
                         <div class="mcc-horario">19h30</div>
-                        <div class="mcc-tipo">Adoração ao Santíssimo</div>
+                        <div class="mcc-tipo">Missa Semanal</div>
+                        <div class="mcc-obs">Após a missa: Terço dos Homens</div>
                     </div>
 
                     <div class="missa-card-compact duplo">
@@ -527,19 +575,22 @@
                                 <span class="mcc-tipo">Missa Matinal</span>
                             </div>
                             <div class="mcc-h-item novo">
-                                <span class="mcc-badge">Novo</span>
                                 <span class="mcc-horario">19h30</span>
-                                <span class="mcc-tipo">Missa Noturna</span>
+                                <span class="mcc-tipo">Missa com Bênção do Santíssimo</span>
                             </div>
                         </div>
+                        <div class="mcc-obs">1ª Quinta: Missa com os Ministros às 19h30</div>
                     </div>
 
                     <div class="missa-card-compact especial">
-                        <div class="mcc-ribbon"><i class="fas fa-star"></i></div>
+                        <div class="mcc-ribbon"><i class="fas fa-hands-praying"></i></div>
                         <div class="mcc-dia">Sexta</div>
                         <div class="mcc-horario">19h30</div>
-                        <div class="mcc-tipo">Missa das Ânimas</div>
-                        <div class="mcc-obs">Missas Encomendadas e Bênção</div>
+                        <div class="mcc-tipo">Missa das Mãos Ensanguentadas de Jesus</div>
+                        <div class="mcc-obs-lista">
+                            <span>1ª Sexta: Hora Santa às 14h + Missa às 15h</span>
+                            <span>Última Sexta: Missa com adoração ao Santíssimo às 19h30</span>
+                        </div>
                     </div>
 
                     <div class="missa-card-compact duplo sabado-duplo">
@@ -547,16 +598,15 @@
                         <div class="mcc-horarios-duplo">
                             <div class="mcc-h-item">
                                 <span class="mcc-badge-sabado segundo">2º Sábado</span>
-                                <span class="mcc-horario">15h</span>
-                                <span class="mcc-tipo">Missa Especial</span>
+                                <span class="mcc-horario">19h30</span>
+                                <span class="mcc-tipo">Missa com Coroinhas e Catequese</span>
                             </div>
                             <div class="mcc-h-item sabado-segundo">
                                 <span class="mcc-badge-sabado quarto">4º Sábado</span>
-                                <span class="mcc-horario">19h</span>
-                                <span class="mcc-tipo">Missa da Vigília</span>
+                                <span class="mcc-horario">19h30</span>
+                                <span class="mcc-tipo">Missa com Pastoral Familiar</span>
                             </div>
                         </div>
-                        <div class="mcc-obs">Antecipa o domingo</div>
                     </div>
                 </div>
             </div>
@@ -579,7 +629,7 @@
                         <h4>Receba lembretes das missas</h4>
                         <p>Cadastre-se para receber notificações dos horários e eventos especiais</p>
                     </div>
-                    <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp">
+                    <a href="https://api.whatsapp.com/send/?phone=551146781432&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp">
                         <i class="fab fa-whatsapp"></i>
                         <span>Receber pelo WhatsApp</span>
                     </a>
@@ -597,139 +647,182 @@
                 <p class="section-subtitle">Fique por dentro das próximas atividades e celebrações da nossa paróquia.</p>
             </div>
 
-            <!-- Banners de Eventos -->
-            <div class="eventos-banners">
-                <div class="eventos-banner-slider" id="eventosBannerSlider">
-                    <!-- Banners serão inseridos aqui -->
-                    <div class="evento-banner-placeholder">
-                        <div class="banner-placeholder-content">
-                            <i class="fas fa-image"></i>
-                            <span>Espaço para Banner de Eventos</span>
+            <!-- Banners de Eventos - Carrossel -->
+            <div class="eventos-banners-carousel">
+                <div class="banners-wrapper">
+                    <div class="banner-slide active">
+                        <div class="evento-banner" style="background: linear-gradient(135deg, #79493D 0%, #5C362C 100%);">
+                            <div class="banner-image-placeholder">
+                                <img src="assets/images/eventos/libras.jpg" alt="Curso Libras na Prática" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="banner-fallback">
+                                    <i class="fas fa-american-sign-language-interpreting"></i>
+                                </div>
+                            </div>
+                            <div class="banner-content">
+                                <span class="banner-tag">Formação</span>
+                                <h3>Curso Libras na Prática</h3>
+                                <p>Aprenda a Língua Brasileira de Sinais e ajude na inclusão da comunidade surda em nossa paróquia.</p>
+                                <button class="btn btn-banner" onclick="openEventoModal('libras')">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Mais Informações</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    <div class="banner-slide">
+                        <div class="evento-banner" style="background: linear-gradient(135deg, #C9A860 0%, #A88940 100%);">
+                            <div class="banner-image-placeholder">
+                                <img src="assets/images/eventos/seminario.jpg" alt="Seminário de Vida" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="banner-fallback">
+                                    <i class="fas fa-dove"></i>
+                                </div>
+                            </div>
+                            <div class="banner-content">
+                                <span class="banner-tag">Espiritualidade</span>
+                                <h3>Seminário de Vida</h3>
+                                <p>Uma experiência transformadora de encontro com Deus. Renove sua fé e descubra uma nova vida em Cristo.</p>
+                                <button class="btn btn-banner" onclick="openEventoModal('seminario')">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Mais Informações</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-slide">
+                        <div class="evento-banner" style="background: linear-gradient(135deg, #5C362C 0%, #2C2420 100%);">
+                            <div class="banner-image-placeholder">
+                                <img src="assets/images/eventos/rebanhao.jpg" alt="Rebanhão" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="banner-fallback">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                            </div>
+                            <div class="banner-content">
+                                <span class="banner-tag">Jovens</span>
+                                <h3>Rebanhão</h3>
+                                <p>Encontro especial para jovens com louvor, pregação e muita comunhão. Venha viver essa experiência!</p>
+                                <button class="btn btn-banner" onclick="openEventoModal('rebanhao')">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Mais Informações</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-slide">
+                        <div class="evento-banner" style="background: linear-gradient(135deg, #9B6B5D 0%, #79493D 100%);">
+                            <div class="banner-image-placeholder">
+                                <img src="assets/images/eventos/musicos.jpg" alt="Formação de Músicos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="banner-fallback">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                            </div>
+                            <div class="banner-content">
+                                <span class="banner-tag">Música</span>
+                                <h3>Formação de Músicos</h3>
+                                <p>Capacitação para músicos que desejam servir nas celebrações litúrgicas. Aprimore seu dom!</p>
+                                <button class="btn btn-banner" onclick="openEventoModal('musicos')">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Mais Informações</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banners-nav">
+                    <button class="banner-arrow prev" onclick="slideBanner(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="banner-dots">
+                        <span class="banner-dot active" onclick="goToBanner(0)"></span>
+                        <span class="banner-dot" onclick="goToBanner(1)"></span>
+                        <span class="banner-dot" onclick="goToBanner(2)"></span>
+                        <span class="banner-dot" onclick="goToBanner(3)"></span>
+                    </div>
+                    <button class="banner-arrow next" onclick="slideBanner(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="eventos-timeline">
-                <div class="timeline-line"></div>
-                
-                <div class="evento-item">
-                    <div class="evento-date">
-                        <div class="date-box">
-                            <span class="date-day">15</span>
-                            <span class="date-month">FEV</span>
-                            <span class="date-year">2026</span>
-                        </div>
+            <!-- Cards de Eventos -->
+            <div class="eventos-cards-grid">
+                <div class="evento-card-new" onclick="openEventoModal('libras')">
+                    <div class="evento-card-icon">
+                        <i class="fas fa-american-sign-language-interpreting"></i>
                     </div>
-                    <div class="evento-content">
-                        <div class="evento-card">
-                            <div class="evento-category">
-                                <i class="fas fa-hands-praying"></i>
-                                <span>Retiro</span>
-                            </div>
-                            <h3 class="evento-title">Retiro Espiritual de Quaresma</h3>
-                            <p class="evento-description">Momento de reflexão e oração para jovens e adultos. Um dia inteiro dedicado ao encontro com Deus.</p>
-                            <div class="evento-details">
-                                <div class="detail-item">
-                                    <i class="far fa-clock"></i>
-                                    <span>08:00 - 17:00</span>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Casa de Retiros</span>
-                                </div>
-                            </div>
-                            <div class="evento-actions">
-                                <a href="#" class="btn btn-sm btn-primary"><span>Inscrever-se</span></a>
-                                <a href="#" class="btn btn-sm btn-outline"><span>Mais informações</span></a>
-                            </div>
-                        </div>
+                    <div class="evento-card-content">
+                        <h4>Curso Libras na Prática</h4>
+                        <p>Aprenda a Língua Brasileira de Sinais</p>
+                    </div>
+                    <div class="evento-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
-
-                <div class="evento-item featured">
-                    <div class="evento-date">
-                        <div class="date-box featured">
-                            <span class="date-day">20</span>
-                            <span class="date-month">JUN</span>
-                            <span class="date-year">2026</span>
-                        </div>
+                <div class="evento-card-new" onclick="openEventoModal('seminario')">
+                    <div class="evento-card-icon">
+                        <i class="fas fa-dove"></i>
                     </div>
-                    <div class="evento-content">
-                        <div class="evento-card featured">
-                            <div class="featured-ribbon">
-                                <i class="fas fa-star"></i>
-                                <span>Destaque</span>
-                            </div>
-                            <div class="evento-category">
-                                <i class="fas fa-music"></i>
-                                <span>Festa</span>
-                            </div>
-                            <h3 class="evento-title">Quermesse da Paróquia</h3>
-                            <p class="evento-description">Nossa tradicional festa junina com comidas típicas, quadrilha, bingo e muita alegria para toda a família!</p>
-                            <div class="evento-details">
-                                <div class="detail-item">
-                                    <i class="far fa-clock"></i>
-                                    <span>18:00 - 23:00</span>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Salão Paroquial</span>
-                                </div>
-                            </div>
-                            <div class="evento-actions">
-                                <a href="#" class="btn btn-sm btn-gold"><span>Participar</span></a>
-                                <a href="#" class="btn btn-sm btn-outline-light">
-                                    <span>Compartilhar</span>
-                                    <i class="fas fa-share"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="evento-card-content">
+                        <h4>Seminário de Vida</h4>
+                        <p>Experiência transformadora de fé</p>
+                    </div>
+                    <div class="evento-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
-
-                <div class="evento-item">
-                    <div class="evento-date">
-                        <div class="date-box">
-                            <span class="date-day">24</span>
-                            <span class="date-month">DEZ</span>
-                            <span class="date-year">2026</span>
-                        </div>
+                <div class="evento-card-new" onclick="openEventoModal('rebanhao')">
+                    <div class="evento-card-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <div class="evento-content">
-                        <div class="evento-card">
-                            <div class="evento-category">
-                                <i class="fas fa-church"></i>
-                                <span>Celebração</span>
-                            </div>
-                            <h3 class="evento-title">Missa do Galo - Natal</h3>
-                            <p class="evento-description">Celebração especial da noite de Natal com coral, orquestra e a tradicional benção do Menino Jesus.</p>
-                            <div class="evento-details">
-                                <div class="detail-item">
-                                    <i class="far fa-clock"></i>
-                                    <span>22:00</span>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Igreja Matriz</span>
-                                </div>
-                            </div>
-                            <div class="evento-actions">
-                                <a href="#" class="btn btn-sm btn-primary"><span>Confirmar presença</span></a>
-                            </div>
-                        </div>
+                    <div class="evento-card-content">
+                        <h4>Rebanhão</h4>
+                        <p>Encontro especial para jovens</p>
+                    </div>
+                    <div class="evento-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
-            </div>
-
-            <div class="eventos-footer">
-                <a href="#" class="btn btn-outline-dark">
-                    <span>Ver todos os eventos</span>
-                    <i class="fas fa-calendar-alt"></i>
-                </a>
+                <div class="evento-card-new" onclick="openEventoModal('musicos')">
+                    <div class="evento-card-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="evento-card-content">
+                        <h4>Formação de Músicos</h4>
+                        <p>Capacitação para servir nas celebrações</p>
+                    </div>
+                    <div class="evento-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal de Eventos -->
+    <div class="modal-overlay" id="eventoModal">
+        <div class="modal-container evento-modal">
+            <button class="modal-close" onclick="closeEventoModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="evento-modal-header" id="eventoModalHeader">
+                    <div class="evento-modal-icon" id="eventoModalIcon"></div>
+                    <div class="evento-modal-tag" id="eventoModalTag"></div>
+                    <h3 class="evento-modal-title" id="eventoModalTitle"></h3>
+                </div>
+                <div class="evento-modal-body">
+                    <p class="evento-modal-description" id="eventoModalDescription"></p>
+                    <div class="evento-modal-details" id="eventoModalDetails"></div>
+                </div>
+                <div class="evento-modal-footer">
+                    <a href="https://api.whatsapp.com/send/?phone=551146781432&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Inscrever-se</span>
+                    </a>
+                    <button class="btn btn-outline-dark" onclick="closeEventoModal()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Pastorais Section -->
     <section class="pastorais-section" id="pastorais">
@@ -741,7 +834,7 @@
                 <p class="section-subtitle">Conheça os grupos que formam nossa comunidade e descubra como você pode participar.</p>
                 <div class="pastorais-counter">
                     <div class="counter-circle">
-                        <span class="counter-number">25</span>
+                        <span class="counter-number">20</span>
                     </div>
                     <span class="counter-text">Pastorais Ativas</span>
                 </div>
@@ -749,6 +842,7 @@
 
             <div class="pastorais-carousel">
                 <div class="pastorais-slider" id="pastoralsSlider">
+                    <!-- 1 - Apostolado da Oração -->
                     <div class="pastoral-card" data-pastoral="apostolado">
                         <div class="pastoral-card-inner">
                             <div class="pastoral-icon"><i class="fas fa-praying-hands"></i></div>
@@ -761,54 +855,46 @@
                         </div>
                     </div>
 
-                    <div class="pastoral-card" data-pastoral="ecc">
+                    <!-- 2 - Cristo é Show -->
+                    <div class="pastoral-card" data-pastoral="cristoeshow">
                         <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-hands-helping"></i></div>
-                            <h3 class="pastoral-name">ECC - Encontro de Casais</h3>
-                            <p class="pastoral-excerpt">Fortalece o sacramento do matrimônio e a vida familiar</p>
-                            <button class="btn-pastoral-info" onclick="openPastoralModal('ecc')">
+                            <div class="pastoral-icon"><i class="fas fa-star"></i></div>
+                            <h3 class="pastoral-name">Cristo é Show</h3>
+                            <p class="pastoral-excerpt">Evangelização através da arte e cultura</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('cristoeshow')">
                                 <span>Saiba mais</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="pastoral-card" data-pastoral="catequese">
+                    <!-- 3 - Missão São Francisco -->
+                    <div class="pastoral-card" data-pastoral="missaosaofrancisco">
                         <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-book-bible"></i></div>
-                            <h3 class="pastoral-name">Pastoral da Catequese</h3>
-                            <p class="pastoral-excerpt">Formação cristã de crianças, jovens e adultos</p>
-                            <button class="btn-pastoral-info" onclick="openPastoralModal('catequese')">
+                            <div class="pastoral-icon"><i class="fas fa-dove"></i></div>
+                            <h3 class="pastoral-name">Missão São Francisco</h3>
+                            <p class="pastoral-excerpt">Missão e evangelização inspirada em São Francisco</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('missaosaofrancisco')">
                                 <span>Saiba mais</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="pastoral-card" data-pastoral="liturgia">
+                    <!-- 4 - Pazcom -->
+                    <div class="pastoral-card" data-pastoral="pazcom">
                         <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-cross"></i></div>
-                            <h3 class="pastoral-name">Pastoral da Liturgia</h3>
-                            <p class="pastoral-excerpt">Prepara e anima as celebrações litúrgicas</p>
-                            <button class="btn-pastoral-info" onclick="openPastoralModal('liturgia')">
+                            <div class="pastoral-icon"><i class="fas fa-bullhorn"></i></div>
+                            <h3 class="pastoral-name">PaZcom</h3>
+                            <p class="pastoral-excerpt">Comunicação e divulgação das atividades paroquiais</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('pazcom')">
                                 <span>Saiba mais</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="pastoral-card" data-pastoral="jovens">
-                        <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-user-friends"></i></div>
-                            <h3 class="pastoral-name">Grupo de Jovens</h3>
-                            <p class="pastoral-excerpt">Evangelização e formação da juventude</p>
-                            <button class="btn-pastoral-info" onclick="openPastoralModal('jovens')">
-                                <span>Saiba mais</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-
+                    <!-- 5 - Pastoral da Acolhida -->
                     <div class="pastoral-card" data-pastoral="acolhida">
                         <div class="pastoral-card-inner">
                             <div class="pastoral-icon"><i class="fas fa-hand-holding-heart"></i></div>
@@ -821,6 +907,7 @@
                         </div>
                     </div>
 
+                    <!-- 6 - Pastoral do Batismo -->
                     <div class="pastoral-card" data-pastoral="batismo">
                         <div class="pastoral-card-inner">
                             <div class="pastoral-icon"><i class="fas fa-water"></i></div>
@@ -833,6 +920,72 @@
                         </div>
                     </div>
 
+                    <!-- 7 - Pastoral da Catequese -->
+                    <div class="pastoral-card" data-pastoral="catequese">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-book-bible"></i></div>
+                            <h3 class="pastoral-name">Pastoral da Catequese</h3>
+                            <p class="pastoral-excerpt">Formação cristã de crianças, jovens e adultos</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('catequese')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 8 - Pastoral dos Ministros -->
+                    <div class="pastoral-card" data-pastoral="ministros">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-bread-slice"></i></div>
+                            <h3 class="pastoral-name">Pastoral dos Ministros</h3>
+                            <p class="pastoral-excerpt">Ministros Extraordinários da Sagrada Comunhão</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('ministros')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 9 - Pastoral dos Cerimoniários -->
+                    <div class="pastoral-card" data-pastoral="cerimoniarios">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-book-reader"></i></div>
+                            <h3 class="pastoral-name">Pastoral dos Cerimoniários</h3>
+                            <p class="pastoral-excerpt">Organização e coordenação das celebrações litúrgicas</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('cerimoniarios')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 10 - Pastoral dos Coroinhas -->
+                    <div class="pastoral-card" data-pastoral="coroinhas">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-child"></i></div>
+                            <h3 class="pastoral-name">Pastoral dos Coroinhas</h3>
+                            <p class="pastoral-excerpt">Formação e serviço dos coroinhas no altar</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('coroinhas')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 11 - Pastoral do Dízimo -->
+                    <div class="pastoral-card" data-pastoral="dizimo">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                            <h3 class="pastoral-name">Pastoral do Dízimo</h3>
+                            <p class="pastoral-excerpt">Formação e conscientização sobre o dízimo</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('dizimo')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 12 - Pastoral Familiar -->
                     <div class="pastoral-card" data-pastoral="familiar">
                         <div class="pastoral-card-inner">
                             <div class="pastoral-icon"><i class="fas fa-home"></i></div>
@@ -845,21 +998,62 @@
                         </div>
                     </div>
 
-                    <div class="pastoral-card" data-pastoral="musica">
+                    <!-- 13 - Pastoral da Liturgia -->
+                    <div class="pastoral-card" data-pastoral="liturgia">
                         <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-music"></i></div>
-                            <h3 class="pastoral-name">Pastoral da Música</h3>
-                            <p class="pastoral-excerpt">Coral e ministério de música nas celebrações</p>
-                            <button class="btn-pastoral-info" onclick="openPastoralModal('musica')">
+                            <div class="pastoral-icon"><i class="fas fa-cross"></i></div>
+                            <h3 class="pastoral-name">Pastoral da Liturgia</h3>
+                            <p class="pastoral-excerpt">Prepara e anima as celebrações litúrgicas</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('liturgia')">
                                 <span>Saiba mais</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
                     </div>
 
+                    <!-- 14 - Pastoral dos Surdos -->
+                    <div class="pastoral-card" data-pastoral="surdos">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-american-sign-language-interpreting"></i></div>
+                            <h3 class="pastoral-name">Pastoral dos Surdos</h3>
+                            <p class="pastoral-excerpt">Acolhimento e evangelização da comunidade surda</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('surdos')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 15 - Pastoral dos Pequeninos do Senhor -->
+                    <div class="pastoral-card" data-pastoral="pequeninos">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-baby"></i></div>
+                            <h3 class="pastoral-name">Pequeninos do Senhor</h3>
+                            <p class="pastoral-excerpt">Evangelização e cuidado das crianças pequenas</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('pequeninos')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 16 - Terço dos Homens -->
+                    <div class="pastoral-card" data-pastoral="tercohomens">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-male"></i></div>
+                            <h3 class="pastoral-name">Terço dos Homens</h3>
+                            <p class="pastoral-excerpt">Grupo de oração e espiritualidade masculina</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('tercohomens')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 17 - Pastoral Social -->
                     <div class="pastoral-card" data-pastoral="social">
                         <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-hands"></i></div>
+                            <div class="pastoral-icon"><i class="fas fa-hands-helping"></i></div>
                             <h3 class="pastoral-name">Pastoral Social</h3>
                             <p class="pastoral-excerpt">Ações de caridade e assistência aos necessitados</p>
                             <button class="btn-pastoral-info" onclick="openPastoralModal('social')">
@@ -869,24 +1063,39 @@
                         </div>
                     </div>
 
-                    <div class="pastoral-card" data-pastoral="terco">
+                    <!-- 18 - Grupo de Oração Santa Teresinha -->
+                    <div class="pastoral-card" data-pastoral="santateresinha">
                         <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-dove"></i></div>
-                            <h3 class="pastoral-name">Terço dos Homens</h3>
-                            <p class="pastoral-excerpt">Grupo de oração e espiritualidade masculina</p>
-                            <button class="btn-pastoral-info" onclick="openPastoralModal('terco')">
+                            <div class="pastoral-icon"><i class="fas fa-pray"></i></div>
+                            <h3 class="pastoral-name">Grupo de Oração Santa Teresinha</h3>
+                            <p class="pastoral-excerpt">Grupo de oração carismática</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('santateresinha')">
                                 <span>Saiba mais</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="pastoral-card" data-pastoral="comunicacao">
+                    <!-- 19 - Grupo de Jovens Dom Bosco -->
+                    <div class="pastoral-card" data-pastoral="dombosco">
                         <div class="pastoral-card-inner">
-                            <div class="pastoral-icon"><i class="fas fa-bullhorn"></i></div>
-                            <h3 class="pastoral-name">PaZcom - Comunicação</h3>
-                            <p class="pastoral-excerpt">Comunicação e divulgação das atividades</p>
-                            <button class="btn-pastoral-info" onclick="openPastoralModal('comunicacao')">
+                            <div class="pastoral-icon"><i class="fas fa-user-friends"></i></div>
+                            <h3 class="pastoral-name">Grupo de Jovens Dom Bosco</h3>
+                            <p class="pastoral-excerpt">Evangelização e formação da juventude</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('dombosco')">
+                                <span>Saiba mais</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 20 - Terço das Mulheres -->
+                    <div class="pastoral-card" data-pastoral="tercomulheres">
+                        <div class="pastoral-card-inner">
+                            <div class="pastoral-icon"><i class="fas fa-female"></i></div>
+                            <h3 class="pastoral-name">Terço das Mulheres</h3>
+                            <p class="pastoral-excerpt">Grupo de oração e espiritualidade feminina</p>
+                            <button class="btn-pastoral-info" onclick="openPastoralModal('tercomulheres')">
                                 <span>Saiba mais</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
@@ -1062,31 +1271,32 @@
                 <h2 class="section-title">Nossa Localização</h2>
                 <p class="localizacao-endereco">
                     <i class="fas fa-map-marker-alt"></i>
-                    Praça da Matriz, 100 - Centro<br>
-                    CEP 00000-000 - Cidade/UF
+                    R. Getúlio Vargas, 250 - Vila Romanopolis<br>
+                    CEP 08500-110 - Ferraz de Vasconcelos/SP
                 </p>
                 <div class="localizacao-horarios">
                     <h4>Horário de Funcionamento da Secretaria</h4>
                     <div class="horario-item">
                         <span class="dia">Segunda a Sexta</span>
-                        <span class="hora">08h às 17h</span>
-                    </div>
-                    <div class="horario-item">
-                        <span class="dia">Sábado</span>
-                        <span class="hora">08h às 12h</span>
+                        <span class="hora">09h às 12h | 13h às 17h</span>
                     </div>
                 </div>
-                <a href="https://maps.google.com" target="_blank" class="btn btn-gold">
+                <a href="https://www.google.com/maps/dir//R.+Get%C3%BAlio+Vargas,+250+-+Vila+Romanopolis,+Ferraz+de+Vasconcelos+-+SP,+08500-110" target="_blank" class="btn btn-gold">
                     <i class="fas fa-directions"></i>
                     <span>Como Chegar</span>
                 </a>
             </div>
         </div>
         <div class="localizacao-map">
-            <div class="map-placeholder">
-                <i class="fas fa-map-marked-alt"></i>
-                <p>Mapa interativo</p>
-            </div>
+            <iframe 
+                src="https://maps.google.com/maps?q=R.+Getúlio+Vargas,+250,+Vila+Romanopolis,+Ferraz+de+Vasconcelos,+SP,+08500-110&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="100%" 
+                style="border:0; min-height: 400px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
@@ -1104,23 +1314,22 @@
                             <div class="contato-card-icon"><i class="fas fa-phone-alt"></i></div>
                             <div class="contato-card-content">
                                 <h4>Telefone</h4>
-                                <p>(00) 0000-0000</p>
-                                <p>(00) 90000-0000</p>
+                                <p>(11) 4678-1432</p>
                             </div>
                         </div>
                         <div class="contato-card">
                             <div class="contato-card-icon"><i class="fas fa-envelope"></i></div>
                             <div class="contato-card-content">
                                 <h4>E-mail</h4>
-                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8deee2e3f9ecf9e2cde0ecf9ffe4f7e3fefdecf7a3eee2e0a3efff">[email&#160;protected]</a></p>
+                                <p><a href="mailto:paroquia.nspaz@hotmail.com">paroquia.nspaz@hotmail.com</a></p>
                             </div>
                         </div>
                         <div class="contato-card whatsapp">
                             <div class="contato-card-icon"><i class="fab fa-whatsapp"></i></div>
                             <div class="contato-card-content">
                                 <h4>WhatsApp</h4>
-                                <p>(00) 90000-0000</p>
-                                <a href="https://wa.me/5500000000000" target="_blank" class="btn-link">Enviar mensagem →</a>
+                                <p>(11) 4678-1432</p>
+                                <a href="https://api.whatsapp.com/send/?phone=551146781432&text&type=phone_number&app_absent=0" target="_blank" class="btn-link">Enviar mensagem →</a>
                             </div>
                         </div>
                     </div>
@@ -1128,10 +1337,8 @@
                     <div class="contato-social">
                         <h4>Siga-nos nas redes sociais</h4>
                         <div class="social-links">
-                            <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
-                            <a href="#" class="social-link tiktok"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.facebook.com/IgrejaNossaSenhoradaPazFV/?locale=pt_BR" target="_blank" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/nspaz.fv/" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1212,10 +1419,9 @@
                     </div>
                     <p class="footer-description">Uma comunidade de fé, esperança e amor, dedicada a servir a Deus e ao próximo.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/IgrejaNossaSenhoradaPazFV/?locale=pt_BR" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/nspaz.fv/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=551146781432&text&type=phone_number&app_absent=0" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -1248,19 +1454,19 @@
                     <h4>Contato</h4>
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Praça da Matriz, 100<br>Centro - CEP 00000-000</span>
+                        <span>R. Getúlio Vargas, 250<br>Vila Romanopolis - Ferraz de Vasconcelos/SP<br>CEP 08500-110</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-phone-alt"></i>
-                        <span>(00) 0000-0000</span>
+                        <span>(11) 4678-1432</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4724282933263328072a2633352e3d293437263d6924282a692535">[email&#160;protected]</a></span>
+                        <span>paroquia.nspaz@hotmail.com</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="far fa-clock"></i>
-                        <span>Secretaria: Seg-Sex 8h-17h</span>
+                        <span>Secretaria: Seg-Sex 9h-12h | 13h-17h</span>
                     </div>
                 </div>
             </div>
@@ -1298,6 +1504,8 @@
             </div>
         </div>
     </div> -->
+
+
 
     <!-- Pastoral Modal -->
     <div class="modal-overlay" id="pastoralModal">
